@@ -1,0 +1,45 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../base
+
+patches:
+  - target:
+      group: nmstate.io
+      version: v1
+      kind: NodeNetworkConfigurationPolicy
+      name: osp-multi-nic-worker-ocp4-worker1
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: "control-plane-cluster-zmxsf-1"
+      - op: replace
+        path: /spec/nodeSelector/kubernetes.io~1hostname
+        value: "control-plane-cluster-zmxsf-1"
+
+  - target:
+      group: nmstate.io
+      version: v1
+      kind: NodeNetworkConfigurationPolicy
+      name: osp-multi-nic-worker-ocp4-worker2
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: "control-plane-cluster-zmxsf-2"
+      - op: replace
+        path: /spec/nodeSelector/kubernetes.io~1hostname
+        value: "control-plane-cluster-zmxsf-2"
+
+  - target:
+      group: nmstate.io
+      version: v1
+      kind: NodeNetworkConfigurationPolicy
+      name: osp-multi-nic-worker-ocp4-worker3
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: "control-plane-cluster-zmxsf-3"
+      - op: replace
+        path: /spec/nodeSelector/kubernetes.io~1hostname
+        value: "control-plane-cluster-zmxsf-3"
