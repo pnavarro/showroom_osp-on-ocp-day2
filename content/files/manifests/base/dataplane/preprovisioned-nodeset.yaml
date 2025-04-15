@@ -86,8 +86,8 @@ spec:
             routes: {{ internalapi_host_routes }}
           - type: interface
             name: eth3
-            mtu: {{ min_viable_mtu }
-            use_dhcp: false}
+            mtu: {{ min_viable_mtu }}
+            use_dhcp: false
             addresses:
               - ip_netmask: {{ storage_ip }}/{{ storage_cidr }}
             routes: {{ storage_host_routes }}
