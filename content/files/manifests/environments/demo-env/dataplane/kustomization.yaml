@@ -13,3 +13,7 @@ patches:
     target:
       kind: OpenStackDataPlaneNodeSet
       name: preprovisioned-nodeset
+  - path: patch-pvc-storageclass.yaml
+    target:
+      kind: PersistentVolumeClaim
+      name: openstack-dataplane-ansible-log
