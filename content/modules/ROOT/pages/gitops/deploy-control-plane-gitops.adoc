@@ -12,7 +12,7 @@ cd /home/lab-user/labrepo/content/files/manifests
 Create the environment/base directory
 [source,bash,role=execute]
 ----
-mkdir -p base
+mkdir -p environments/base
 ----
 
 [source,bash,role=execute]
